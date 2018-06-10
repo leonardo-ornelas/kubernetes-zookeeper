@@ -56,7 +56,7 @@ spec:
       containers:
       - name: kubernetes-zookeeper
         imagePullPolicy: Always
-        image: "gcr.io/google_containers/kubernetes-zookeeper:1.0-3.4.10"
+        image: "ornelas/kubernetes-zookeeper"
         resources:
           requests:
             memory: "1Gi"
@@ -108,9 +108,6 @@ spec:
         volumeMounts:
         - name: datadir
           mountPath: /var/lib/zookeeper
-      securityContext:
-        runAsUser: 1000
-        fsGroup: 1000
   volumeClaimTemplates:
   - metadata:
       name: datadir
